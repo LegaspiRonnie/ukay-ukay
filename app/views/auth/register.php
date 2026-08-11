@@ -6,17 +6,13 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-4">
-                <?php if (!empty($_SESSION['message_type']) && !empty($_SESSION['message'])): ?>
-                    <div class="alert alert-<?= $_SESSION['message_type'] === 'error' ? 'danger' : 'success' ?>" role="alert">
-                        <?= htmlspecialchars($_SESSION['message']) ?>
-                    </div>
-                    <?php unset($_SESSION['message'], $_SESSION['message_type']); ?>
-                <?php endif; ?>
+                
+                <?php include '../components/alert.php'; ?>
 
-                <div class="card shadow-sm">
+                <div class="card shadow-sm auth-card">
                     <div class="text-center mt-3"><h2 class="h5 mb-0">Register</h2></div>
                     <div class="card-body">
-                        <form method="post" action="../../controllers/register.php">
+                        <form method="post" action="../../controllers/register.php" onsubmit="const btn=this.querySelector('button[type=submit]'); btn.disabled=true; btn.innerText='Registering...'; return true;">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
                                 <input name="username" type="text" class="form-control" id="username" aria-describedby="usernameHelp" required autofocus>

@@ -1,0 +1,29 @@
+/* Mobile-first styles for Ukay-Ukay */
+:root{
+  --brand:#0d6efd;
+}
+html,body{height:100%;}
+body{background-color:#f8f9fa;color:#212529;font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial}
+
+/* auth card sizing — full width on small screens, constrained on larger */
+.auth-card{width:100%;padding:0}
+@media(min-width:576px){
+  .auth-card{max-width:420px;margin-left:auto;margin-right:auto}
+}
+
+/* card tweaks */
+.card.shadow-sm{border-radius:.75rem}
+.card .card-body{padding:1.25rem}
+
+/* buttons */
+.btn[disabled]{opacity:0.65}
+
+/* small utilities */
+.mt-3{margin-top:1rem!important}
+.px-2{padding-left:.5rem!important;padding-right:.5rem!important}
+
+/* ensure navbar compact on mobile */
+.navbar-brand{font-size:1.1rem}
+
+/* make text readable on small screens */
+.container{padding-left:0.75rem;padding-right:0.75rem}
